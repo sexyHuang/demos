@@ -1,5 +1,5 @@
 const { QuickSort } = require('./QuickSort');
-const { MergeSorts } = require('./MergeSort');
+const { MergeSort } = require('./MergeSort');
 const { bucketSort } = require('./BucketSort');
 const { HeapSort } = require('./HeapSort');
 const { RadixSort } = require('./RadixSort');

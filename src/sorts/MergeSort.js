@@ -35,7 +35,7 @@ function mergeSorts(array, start_idx = 0, end_idx = array.length - 1) {
     if (array[mid] > array[mid + 1]) MergeArrays_2(array, start_idx, end_idx);
   }
 }
-function MergeSorts(array) {
+function MergeSort(array) {
   // let Copy = array.slice();
   mergeSorts(array, 0, array.length - 1);
   return array;
@@ -57,5 +57,5 @@ console.log('end');
  */
 
 module.exports = {
-  MergeSorts
+  MergeSort
 };

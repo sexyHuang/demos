@@ -2,21 +2,20 @@
  * @Author: Sexy
  * @Date: 2019-01-02 16:44:40
  * @LastEditors: Sexy
- * @LastEditTime: 2019-01-03 17:21:42
+ * @LastEditTime: 2019-01-08 17:38:49
  * @Description: 堆排序
  */
-
 
 function HeapSort(array) {
   createMaxHeap(array);
   //let result = [].push(array[0]);
   for (let i = array.length - 1; i > 0; i--) {
     [array[i], array[0]] = [array[0], array[i]];
-    MaxHeap(array, 0, i - 1);
+    heapify(array, 0, i - 1);
   }
 }
 
-function MaxHeap(array, startIdx, endIdx) {
+function heapify(array, startIdx = 0, endIdx = array.length - 1) {
   let son = startIdx * 2 + 1;
   if (son > endIdx) return;
   if (son + 1 <= endIdx && array[son + 1] > array[son]) {
@@ -24,13 +23,14 @@ function MaxHeap(array, startIdx, endIdx) {
   }
   if (array[startIdx] <= array[son]) {
     [array[startIdx], array[son]] = [array[son], array[startIdx]];
-    MaxHeap(array, son, endIdx);
+    heapify(array, son, endIdx);
+    
   }
 }
 
 function createMaxHeap(array) {
   for (let i = Math.floor(array.length / 2) - 1; i >= 0; i--) {
-    MaxHeap(array, i, array.length - 1);
+    heapify(array, i, array.length - 1);
   }
   return array;
 }

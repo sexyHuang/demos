@@ -39,6 +39,7 @@ function MergeSort(array) {
   // let Copy = array.slice();
   mergeSorts(array, 0, array.length - 1);
   return array;
+  
 }
 
 /* let a = ramdomList(2);
